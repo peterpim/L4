@@ -1,16 +1,12 @@
 <?php
 
-class ListController {
+class ListController extends Controller {
 
-    public function showList($status)
-    {
-        if($status)
-        {
-            echo 'lijst';
-        } else
-            echo 'geen lijst';
+    public function getIndex() {
+        return View::make('todolist')
+                ->with('tasks', Task::all());
     }
-          
+
 }
 
 ?>
